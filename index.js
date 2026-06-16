@@ -90,8 +90,8 @@ export function quintuple(numbers) {
   if (numbers.length === 0) {
     return result;
   }
-  for (number of numbers) {
-    result.pop(number * 5);
+  for (let number of numbers) {
+    result.push(number * 5);
   }
   return result;
 }
@@ -118,13 +118,14 @@ export function pluralize(words) {
     return [];
   } else {
     for (let i = 0; i < words.length; i++) {
-      if (words[i][words[i].length - 1] === s) {
+      if (words[i][words[i].length - 1] === "s") {
         words[i] += "es";
       } else {
         words[i] += "s";
       }
     }
   }
+  return words;
 }
 
 /**
@@ -143,9 +144,9 @@ export function pluralize(words) {
 export function countAttendance(attendance) {
   let attendees = 0;
   if (attendance.length === 0) {
-    return [];
+    return 0;
   } else {
-    for (student of attendance) {
+    for (const student of attendance) {
       if (student) {
         attendees++;
       }
@@ -178,7 +179,7 @@ export function getLongestWord(sentence) {
       index = i;
     }
   }
-  return sentence[i];
+  return sentence[index];
 }
 
 /**
